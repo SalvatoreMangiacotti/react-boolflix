@@ -33,6 +33,8 @@ export default function Movies() {
 
                         original_title={movie.original_title}
 
+                        original_language={movie.original_language}
+
                         vote={movie.vote_average}
 
                         overview={movie.overview}
