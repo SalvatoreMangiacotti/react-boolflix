@@ -25,7 +25,9 @@ export default function Movies() {
 
                     <MovieCard
 
-                        key={movie.key}
+                        key={movie.id}
+
+                        id={movie.id}
 
                         title={movie.title}
 

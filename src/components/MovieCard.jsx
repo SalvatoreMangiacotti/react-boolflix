@@ -1,10 +1,10 @@
 export default function MovieCard(props) {
 
-    const { key, title, original_title, vote, overview } = props;
+    const { id, title, original_title, vote, overview } = props;
 
     return (
 
-        <li key={key}>
+        <li key={id}>
 
             <h2>{title}</h2>
 
