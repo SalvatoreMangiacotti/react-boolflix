@@ -18,7 +18,7 @@ import { useState } from "react";
 
 export default function Form() {
 
-    const { moviesData, setMoviesData } = useContext(GlobalContext)
+    const { setMoviesData } = useContext(GlobalContext)
 
     const [userInput, setUserInput] = useState('');
 
@@ -31,9 +31,9 @@ export default function Form() {
 
                 const data = response.data.results;
 
-                setMoviesData(data);
+                const filteredMovies = data.filter((movie) => movie.title.toLowerCase().includes(userInput.toLowerCase()));
 
-                console.log(response);
+                setMoviesData(filteredMovies);
 
             })
             .catch(function (error) {
@@ -59,10 +59,6 @@ export default function Form() {
         event.preventDefault();
 
         getData();
-
-        const filterMovies = moviesData.filter((movie) => movie.title.includes(userInput));
-
-        console.log(filterMovies);
 
     }
 
@@ -92,11 +88,7 @@ export default function Form() {
 
             />
 
-            <button
-
-            // onClick={}
-
-            > Search </button>
+            <button> Search </button>
 
         </form>
 

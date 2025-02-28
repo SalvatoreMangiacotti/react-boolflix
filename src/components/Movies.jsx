@@ -4,6 +4,10 @@ import { useContext } from "react"
 
 import GlobalContext from "../contexts/GlobalContext"
 
+// Components
+
+import MovieCard from "./MovieCard"
+
 
 
 export default function Movies() {
@@ -19,11 +23,19 @@ export default function Movies() {
 
                 moviesData.map((movie) =>
 
-                    <li key={movie.id}>
+                    <MovieCard
 
-                        <h2>{movie.title}</h2>
+                        key={movie.key}
 
-                    </li>
+                        title={movie.title}
+
+                        original_title={movie.original_title}
+
+                        vote={movie.vote_average}
+
+                        overview={movie.overview}
+
+                    />
 
                 )
 
