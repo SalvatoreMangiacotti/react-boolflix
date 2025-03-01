@@ -10,7 +10,7 @@ export default function MovieCard(props) {
 
             <h3>{original_title}</h3>
 
-            <span className={`fi fi-${original_language}`} alt={`Flag Country ${original_language}`}></span>
+            <span className={`fi fi-${original_language}`} alt={`Language country flag : ${original_language}`}></span>
 
             <span>{vote}</span>
 

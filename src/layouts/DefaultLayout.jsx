@@ -8,15 +8,16 @@ import { useState } from "react";
 
 // Components
 
-import Header from "../components/Header";
+import Header from "../components/header/Header";
 
 import Main from "../components/Main";
-
 
 
 function DefaultLayout() {
 
     const [moviesData, setMoviesData] = useState([]);
+
+    const [showsData, setShowsData] = useState([]);
 
     return (
 
@@ -24,7 +25,7 @@ function DefaultLayout() {
 
             value={
 
-                { moviesData, setMoviesData }
+                { moviesData, setMoviesData, showsData, setShowsData }
 
             }
 

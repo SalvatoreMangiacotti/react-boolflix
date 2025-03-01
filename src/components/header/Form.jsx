@@ -2,7 +2,7 @@
 
 import { useContext } from "react"
 
-import GlobalContext from "../contexts/GlobalContext"
+import GlobalContext from "../../contexts/GlobalContext"
 
 
 // Axios
@@ -18,12 +18,12 @@ import { useState } from "react";
 
 export default function Form() {
 
-    const { setMoviesData } = useContext(GlobalContext)
+    const { setMoviesData, setShowsData } = useContext(GlobalContext)
 
     const [userInput, setUserInput] = useState('');
 
 
-    function getData() {
+    function getMoviesData() {
 
         axios.get(`https://api.themoviedb.org/3/search/movie?api_key=bd977f1c6ed262905b909c98b3187466&query=${userInput}`)
 
@@ -34,6 +34,28 @@ export default function Form() {
                 const filteredMovies = data.filter((movie) => movie.title.toLowerCase().includes(userInput.toLowerCase()));
 
                 setMoviesData(filteredMovies);
+
+            })
+            .catch(function (error) {
+
+                console.log(error);
+
+            })
+
+    }
+
+
+    function getShowsData() {
+
+        axios.get(`https://api.themoviedb.org/3/search/tv?api_key=bd977f1c6ed262905b909c98b3187466&query=${userInput}`)
+
+            .then(function (response) {
+
+                const data = response.data.results;
+
+                const filteredShows = data.filter((show) => show.name.toLowerCase().includes(userInput.toLowerCase()));
+
+                setShowsData(filteredShows);
 
             })
             .catch(function (error) {
@@ -58,7 +80,9 @@ export default function Form() {
 
         event.preventDefault();
 
-        getData();
+        getMoviesData();
+
+        getShowsData();
 
     }
 
@@ -70,7 +94,7 @@ export default function Form() {
 
             onSubmit={handleFormSubmit}
 
-            className="search_movies"
+            className="search_form"
 
         >
 
@@ -80,7 +104,7 @@ export default function Form() {
 
                 placeholder="search"
 
-                aria-label="search movies"
+                aria-label="search"
 
                 name="search"
 

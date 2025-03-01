@@ -1,7 +1,8 @@
 // Components
 
-import Movies from "./Movies"
+import Movies from "./movies/Movies"
 
+import Shows from "./Shows/Shows"
 
 
 export default function Main() {
@@ -12,8 +13,9 @@ export default function Main() {
 
             <Movies />
 
+            <Shows />
+
         </main>
 
     )
-
 }
