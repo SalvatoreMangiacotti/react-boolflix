@@ -4,6 +4,7 @@ import Movies from "./movies/Movies"
 
 import Shows from "./Shows/Shows"
 
+import '../../src/App.css'
 
 export default function Main() {
 
@@ -11,9 +12,13 @@ export default function Main() {
 
         <main>
 
-            <Movies />
+            <div className="main_container">
 
-            <Shows />
+                <Movies />
+
+                <Shows />
+
+            </div>
 
         </main>
 

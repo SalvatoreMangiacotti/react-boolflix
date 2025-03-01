@@ -17,7 +17,7 @@ export default function Shows() {
 
     return (
 
-        <ul>
+        <>
 
             {
 
@@ -29,6 +29,8 @@ export default function Shows() {
 
                         id={show.id}
 
+                        poster={show.poster_path}
+
                         name={show.name}
 
                         original_name={show.original_name}
@@ -37,7 +39,7 @@ export default function Shows() {
 
                         vote={show.vote_average}
 
-                        overview={show.overview}
+                    // overview={show.overview}
 
                     />
 
@@ -45,7 +47,7 @@ export default function Shows() {
 
             }
 
-        </ul>
+        </>
 
     )
 

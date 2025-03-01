@@ -17,7 +17,7 @@ export default function Movies() {
 
     return (
 
-        <ul>
+        <>
 
             {
 
@@ -28,6 +28,8 @@ export default function Movies() {
                         key={movie.id}
 
                         id={movie.id}
+
+                        poster={movie.poster_path}
 
                         title={movie.title}
 
@@ -45,7 +47,7 @@ export default function Movies() {
 
             }
 
-        </ul>
+        </>
 
     )
 

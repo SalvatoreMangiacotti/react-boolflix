@@ -1,0 +1,36 @@
+/* Resets */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* Main */
+
+.main_container {
+
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+}
+
+.card {
+
+    background-color: lightskyblue;
+
+    padding: 1rem;
+
+    width: 30%;
+
+}

@@ -1,10 +1,12 @@
 export default function MovieCard(props) {
 
-    const { id, title, original_title, original_language, vote, overview } = props;
+    const { id, poster, title, original_title, original_language, vote, overview } = props;
 
     return (
 
-        <li key={id}>
+        <div className="card" key={id}>
+
+            <img src={`https://image.tmdb.org/t/p/w500/${poster}`} />
 
             <h2>{title}</h2>
 
@@ -16,7 +18,7 @@ export default function MovieCard(props) {
 
             <p>{overview}</p>
 
-        </li>
+        </div>
 
     )
 

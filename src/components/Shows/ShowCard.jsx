@@ -1,10 +1,12 @@
 export default function ShowCard(props) {
 
-    const { id, name, original_name, original_language, vote, overview } = props;
+    const { id, poster, name, original_name, original_language, vote, overview } = props;
 
     return (
 
-        <li key={id}>
+        <div className="card" key={id}>
+
+            <img src={`https://image.tmdb.org/t/p/w500/${poster}`} />
 
             <h2>{name}</h2>
 
@@ -16,7 +18,7 @@ export default function ShowCard(props) {
 
             <p>{overview}</p>
 
-        </li>
+        </div>
 
     )
 
