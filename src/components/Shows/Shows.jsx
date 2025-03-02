@@ -15,37 +15,60 @@ export default function Shows() {
     const { showsData } = useContext(GlobalContext)
 
 
+    function voteStars(vote_average) {
+
+        const newVoteValue = Math.floor(vote_average / 2);
+
+        let starsArray = [];
+
+        for (let i = 0; i < 5; i++) {
+
+            starsArray.push(starsArray < newVoteValue ? <i className="fa-solid fa-star" key={i}></i> : <i className="fa-regular fa-star" key={i}></i>);
+
+        }
+
+        return starsArray;
+
+    }
+
+
     return (
 
         <>
 
-            {
+            <h2>Tv Shows</h2>
 
-                showsData.map((show) =>
+            <div className="shows_cards">
 
-                    <ShowCard
+                {
 
-                        key={show.id}
+                    showsData.map((show) =>
 
-                        id={show.id}
+                        <ShowCard
 
-                        poster={show.poster_path}
+                            key={show.id}
 
-                        name={show.name}
+                            id={show.id}
 
-                        original_name={show.original_name}
+                            poster={show.poster_path}
 
-                        original_language={show.original_language}
+                            name={show.name}
 
-                        vote={show.vote_average}
+                            original_name={show.original_name}
 
-                    // overview={show.overview}
+                            original_language={show.original_language}
 
-                    />
+                            vote={voteStars(show.vote_average)}
 
-                )
+                            overview={show.overview}
 
-            }
+                        />
+
+                    )
+
+                }
+
+            </div>
 
         </>
 

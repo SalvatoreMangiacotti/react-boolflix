@@ -15,15 +15,32 @@
 
 .main_container {
 
-    display: flex;
+    text-align: center;
 
-    justify-content: center;
+}
+
+
+.main_container h2 {
+
+    padding: 2rem;
+
+}
+
+
+.movies_cards,
+.shows_cards {
+
+    display: flex;
 
     flex-wrap: wrap;
 
-    gap: 10px;
+    justify-content: center;
+
+    gap: 1rem;
 
 }
+
+
 
 .card {
 
