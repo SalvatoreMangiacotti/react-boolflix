@@ -27,8 +27,7 @@
 }
 
 
-.movies_cards,
-.shows_cards {
+.cards_container {
 
     display: flex;
 

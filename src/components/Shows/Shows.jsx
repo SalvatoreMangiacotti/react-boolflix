@@ -36,39 +36,47 @@ export default function Shows() {
 
         <>
 
-            <h2>Tv Shows</h2>
+            {showsData.length > 0 &&
 
-            <div className="shows_cards">
+                <>
 
-                {
+                    <h2>Series</h2>
 
-                    showsData.map((show) =>
+                    <div className="cards_container">
 
-                        <ShowCard
+                        {
 
-                            key={show.id}
+                            showsData.map((show) =>
 
-                            id={show.id}
+                                <ShowCard
 
-                            poster={show.poster_path}
+                                    key={show.id}
 
-                            name={show.name}
+                                    id={show.id}
 
-                            original_name={show.original_name}
+                                    poster={show.poster_path}
 
-                            original_language={show.original_language}
+                                    name={show.name}
 
-                            vote={voteStars(show.vote_average)}
+                                    original_name={show.original_name}
 
-                            overview={show.overview}
+                                    original_language={show.original_language}
 
-                        />
+                                    vote={voteStars(show.vote_average)}
 
-                    )
+                                    overview={show.overview}
 
-                }
+                                />
 
-            </div>
+                            )
+
+                        }
+
+                    </div>
+
+                </>
+
+            }
 
         </>
 

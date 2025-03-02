@@ -36,40 +36,47 @@ export default function Movies() {
 
         <>
 
-            <h2>Movies</h2>
+            {moviesData.length > 0 &&
 
+                <>
 
-            <div className="movies_cards">
+                    <h2>Movies</h2>
 
-                {
+                    <div className="cards_container">
 
-                    moviesData.map((movie) =>
+                        {
 
-                        <MovieCard
+                            moviesData.map((movie) =>
 
-                            key={movie.id}
+                                <MovieCard
 
-                            id={movie.id}
+                                    key={movie.id}
 
-                            poster={movie.poster_path}
+                                    id={movie.id}
 
-                            title={movie.title}
+                                    poster={movie.poster_path}
 
-                            original_title={movie.original_title}
+                                    title={movie.title}
 
-                            original_language={movie.original_language}
+                                    original_title={movie.original_title}
 
-                            vote={voteStars(movie.vote_average)}
+                                    original_language={movie.original_language}
 
-                            overview={movie.overview}
+                                    vote={voteStars(movie.vote_average)}
 
-                        />
+                                    overview={movie.overview}
 
-                    )
+                                />
 
-                }
+                            )
 
-            </div>
+                        }
+
+                    </div>
+
+                </>
+
+            }
 
         </>
 
