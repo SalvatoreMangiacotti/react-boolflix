@@ -6,17 +6,49 @@ export default function MovieCard(props) {
 
         <div className="card" key={id}>
 
-            <img src={`https://image.tmdb.org/t/p/w500/${poster}`} />
+            {poster ? (<img src={`https://image.tmdb.org/t/p/w342/${poster}`} />) :
 
-            <h2>{title}</h2>
+                (<p>Image not Found</p>)
 
-            <h3>{original_title}</h3>
+            }
 
-            <span className={`fi fi-${original_language}`} alt={`Language country flag : ${original_language}`}></span>
+            <div className="card_content">
 
-            <span>{vote}</span>
+                <p>
 
-            <p>{overview}</p>
+                    <strong>Titolo:</strong>
+
+                    {title}
+
+                </p>
+
+                <p>
+
+                    <strong>Titolo originiale:</strong>
+
+                    {original_title}
+
+                </p>
+
+                <span className={`fi fi-${original_language}`} alt={`Language country flag : ${original_language}`}></span>
+
+                <p>
+
+                    <strong>Voto:</strong>
+
+                    {vote}
+
+                </p>
+
+                <p className="overview">
+
+                    <strong>Overview:</strong>
+
+                    {overview}
+
+                </p>
+
+            </div>
 
         </div>
 

@@ -10,6 +10,8 @@ export default function Header() {
 
         <header>
 
+            <h1>BoolFlix</h1>
+
             <nav>
 
                 <Form />

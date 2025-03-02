@@ -12,15 +12,43 @@ export default function ShowCard(props) {
                 (<p>Image not Found</p>)
             }
 
-            <h2>{name}</h2>
+            <div className="card_content">
 
-            <h3>{original_name}</h3>
+                <p>
 
-            <span className={`fi fi-${original_language}`} alt={`Language country flag : ${original_language}`}></span>
+                    <strong>Titolo:</strong>
 
-            <span>{vote}</span>
+                    {name}
 
-            <p>{overview}</p>
+                </p>
+
+                <p>
+
+                    <strong>Titolo originale:</strong>
+
+                    {original_name}
+
+                </p>
+
+                <span className={`fi fi-${original_language}`} alt={`Language country flag : ${original_language}`}></span>
+
+                <p>
+
+                    <strong>Voto:</strong>
+
+                    {vote}
+
+                </p>
+
+                <p className="overview">
+
+                    <strong>Overview:</strong>
+
+                    {overview}
+
+                </p>
+
+            </div>
 
         </div>
 
